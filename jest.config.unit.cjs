@@ -1,4 +1,4 @@
-const sharedConfig = require('./jest.config.shared');
+const sharedConfig = require('./jest.config.shared.cjs');
 
 const config = {
   testMatch: ['**/**.unit.test.js'],

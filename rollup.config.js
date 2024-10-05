@@ -4,13 +4,11 @@ import resolve from '@rollup/plugin-node-resolve';
 import localResolve from 'rollup-plugin-local-resolve';
 import filesize from 'rollup-plugin-filesize';
 import minify from 'rollup-plugin-babel-minify';
-import { terser } from 'rollup-plugin-terser';
-
 import pkg from './package.json';
 
-const config = {
-  external: ['axios'],
+export default {
   input: 'src/index.js',
+  external: ['axios'],
   output: [
     {
       file: pkg.browser,
@@ -30,7 +28,7 @@ const config = {
     },
     {
       file: pkg.module,
-      format: 'es',
+      format: 'esm',
       name: pkg.name,
       globals: {
         axios: 'axios',
@@ -38,19 +36,11 @@ const config = {
     },
   ],
   plugins: [
-    babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
-    localResolve(),
-    resolve({
-      preferBuiltins: true,
-      browser: true,
-      modulesOnly: true,
-      mainFields: 'browser',
-    }),
-    minify(),
-    terser(),
+    resolve(),
     commonjs(),
+    babel({ babelHelpers: 'bundled' }),
+    localResolve(),
     filesize(),
+    minify(),
   ],
 };
-
-export default config;

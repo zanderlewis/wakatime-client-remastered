@@ -14,3 +14,5 @@ commitlint.config.js
 .babelrc
 .eslintignore
 .eslintrc
+
+.env

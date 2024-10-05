@@ -1,9 +1,9 @@
 [![Build and Test](https://github.com/zanderlewis/wakatime-client-remastered/actions/workflows/workflows.yaml/badge.svg?label=Build%20and%20Test)](https://github.com/zanderlewis/wakatime-client-remastered/actions/workflows/workflows.yaml)
 [![npm](https://img.shields.io/npm/v/wakatime-client-remastered.svg)](https://www.npmjs.com/package/wakatime-client-remasteres)
-[![npm-total-downloads](https://img.shields.io/npm/dt/wakatime-client-remasteres.svg)](https://www.npmjs.com/package/wakatime-client-remastered)
+[![npm-total-downloads](https://img.shields.io/npm/dt/wakatime-client-remastered.svg)](https://www.npmjs.com/package/wakatime-client-remastered)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/wakatime-client-remastered)
-![Codecov branch](https://img.shields.io/codecov/c/gh/zanderlewis/wakatime-client/master)
-![GitHub](https://img.shields.io/github/license/zanderlewis/wakatime-client)
+![Codecov branch](https://img.shields.io/codecov/c/gh/zanderlewis/wakatime-client-remastered/master)
+![GitHub](https://img.shields.io/github/license/zanderlewis/wakatime-client-remastered)
 
 # wakatime-client
 A `NodeJS` client for [the `WakaTime` API](https://wakatime.com/developers).

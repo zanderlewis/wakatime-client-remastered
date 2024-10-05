@@ -1,4 +1,4 @@
-name: Wakatime Client
+name: Build and Test
 
 on:
   release:
@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [10, 12, 14, 16, 18, 20]
+        node: [18, 20]
     steps:
       - uses: actions/checkout@v2
         with:

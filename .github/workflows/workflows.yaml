@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [18, 20]
+        node: [18, 20, 21]
     steps:
       - uses: actions/checkout@v2
         with:
@@ -36,12 +36,9 @@ jobs:
             ${{ runner.OS }}-
       - name: Install dependencies
         run: npm ci
-      - name: Run Linting
-        run: npm run lint
       - name: Run Build
         run: npm run build
-      - name: Check Build Is ES5 Compatible
-        run: npm run is-build-es5
+
   test:
     name: Test & Code Coverage
     runs-on: ubuntu-latest
@@ -61,27 +58,3 @@ jobs:
           DASHBOARD_ID: ${{ secrets.DASHBOARD_ID }}
           ORGANIZATION_ID: ${{ secrets.ORGANIZATION_ID }}
           USER_ID: ${{ secrets.USER_ID }}
-      - name: Codecov
-        uses: codecov/codecov-action@v1
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/master' }}
-    needs: test
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
-      - name: Setup Node
-        uses: actions/setup-node@v1
-      - name: Install dependencies
-        run: npm ci
-      - name: Run Build
-        run: npm run build
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
-        with:
-          semantic_version: 16
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

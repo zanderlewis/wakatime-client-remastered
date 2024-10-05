@@ -1,6 +1,6 @@
 {
   "name": "wakatime-client",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "NodeJS Client for the Wakatime API",
   "keywords": [
     "wakatime",

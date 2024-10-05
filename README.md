@@ -18,6 +18,7 @@ To install the package, add this line to your `package.json` file:
 ```json
 "wakatime-client": "github:zanderlewis/wakatime-client"
 ```
+or run `npm install wakatime-client-remastered`.
 
 Then run `npm install`.
 

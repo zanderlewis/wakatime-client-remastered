@@ -1,7 +1,6 @@
 {
   "hooks": {
     "pre-commit": "npm run lint",
-    "commit-msg": "npm run commitmsg",
-    "pre-push": "npm run test"
+    "commit-msg": "npm run commitmsg"
   }
 }

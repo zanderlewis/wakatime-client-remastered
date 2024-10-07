@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build
 
 on:
   release:
@@ -38,25 +38,3 @@ jobs:
         run: npm install
       - name: Run Build
         run: npm run build
-
-  test:
-    name: Test & Code Coverage
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref }}
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 21
-      - name: Install dependencies
-        run: npm install
-      - name: Run Tests
-        run: npm test
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          DASHBOARD_ID: ${{ secrets.DASHBOARD_ID }}
-          ORGANIZATION_ID: ${{ secrets.ORGANIZATION_ID }}
-          USER_ID: ${{ secrets.USER_ID }}

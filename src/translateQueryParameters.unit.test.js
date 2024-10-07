@@ -5,6 +5,19 @@ import {
   translateCommitsParameters,
 } from './translateQueryParameters';
 
+const safeStringify = (obj) => {
+  const cache = new Set();
+  return JSON.stringify(obj, (key, value) => {
+    if (typeof value === 'object' && value !== null) {
+      if (cache.has(value)) {
+        return '[Circular]';
+      }
+      cache.add(value);
+    }
+    return value;
+  });
+};
+
 describe('translateQueryParameters', () => {
   const projectName = 'projectName';
   const branchNames = ['jae', 'bae', 'bae'];
@@ -15,7 +28,9 @@ describe('translateQueryParameters', () => {
     const dateRange = { startDate, endDate };
 
     it('gets only required parameters', () => {
-      expect(translateSummaryParameters({ dateRange })).toEqual({
+      const result = translateSummaryParameters({ dateRange });
+      console.log(safeStringify(result));
+      expect(result).toEqual({
         start: startDate,
         end: endDate,
         project: null,
@@ -24,7 +39,9 @@ describe('translateQueryParameters', () => {
     });
 
     it('gets all parameters', () => {
-      expect(translateSummaryParameters({ dateRange, projectName, branchNames })).toEqual({
+      const result = translateSummaryParameters({ dateRange, projectName, branchNames });
+      console.log(safeStringify(result));
+      expect(result).toEqual({
         start: startDate,
         end: endDate,
         project: projectName,
@@ -35,7 +52,9 @@ describe('translateQueryParameters', () => {
 
   describe('translateStatsParameters', () => {
     it('gets only required parameters', () => {
-      expect(translateStatsParameters()).toEqual({
+      const result = translateStatsParameters();
+      console.log(safeStringify(result));
+      expect(result).toEqual({
         timeout: null,
         writes_only: null,
         project: null,
@@ -43,11 +62,13 @@ describe('translateQueryParameters', () => {
     });
 
     it('gets all parameters', () => {
-      expect(translateStatsParameters({
+      const result = translateStatsParameters({
         timeout: 'timeout',
         useWritesOnly: 'useWritesOnly',
         projectName: 'projectName',
-      })).toEqual({
+      });
+      console.log(safeStringify(result));
+      expect(result).toEqual({
         timeout: 'timeout',
         writes_only: 'useWritesOnly',
         project: 'projectName',
@@ -59,7 +80,9 @@ describe('translateQueryParameters', () => {
     const date = 'date';
 
     it('gets only required parameters', () => {
-      expect(translateDurationParameters({ date })).toEqual({
+      const result = translateDurationParameters({ date });
+      console.log(safeStringify(result));
+      expect(result).toEqual({
         date,
         project: null,
         branches: '',
@@ -67,7 +90,9 @@ describe('translateQueryParameters', () => {
     });
 
     it('gets all parameters', () => {
-      expect(translateDurationParameters({ date, projectName, branchNames })).toEqual({
+      const result = translateDurationParameters({ date, projectName, branchNames });
+      console.log(safeStringify(result));
+      expect(result).toEqual({
         date,
         project: projectName,
         branches: 'jae,bae,bae',
@@ -77,14 +102,18 @@ describe('translateQueryParameters', () => {
 
   describe('translateCommitsParameters', () => {
     it('gets only required parameters', () => {
-      expect(translateCommitsParameters()).toEqual({ author: null, page: null });
+      const result = translateCommitsParameters();
+      console.log(safeStringify(result));
+      expect(result).toEqual({ author: null, page: null });
     });
 
     it('gets all parameters', () => {
       const authorUsername = 'authorUsername';
       const pageNumber = 'pageNumber';
 
-      expect(translateCommitsParameters({ authorUsername, pageNumber })).toEqual({
+      const result = translateCommitsParameters({ authorUsername, pageNumber });
+      console.log(safeStringify(result));
+      expect(result).toEqual({
         author: authorUsername,
         page: pageNumber,
       });

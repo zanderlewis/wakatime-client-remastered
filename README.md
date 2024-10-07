@@ -1,4 +1,4 @@
-[![Build and Test](https://github.com/zanderlewis/wakatime-client-remastered/actions/workflows/workflows.yaml/badge.svg?label=Build%20and%20Test)](https://github.com/zanderlewis/wakatime-client-remastered/actions/workflows/workflows.yaml)
+[![Build](https://github.com/zanderlewis/wakatime-client-remastered/actions/workflows/workflows.yaml/badge.svg?label=Build)](https://github.com/zanderlewis/wakatime-client-remastered/actions/workflows/workflows.yaml)
 [![npm](https://img.shields.io/npm/v/wakatime-client-remastered.svg)](https://www.npmjs.com/package/wakatime-client-remasteres)
 [![npm-total-downloads](https://img.shields.io/npm/dt/wakatime-client-remastered.svg)](https://www.npmjs.com/package/wakatime-client-remastered)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/wakatime-client-remastered)

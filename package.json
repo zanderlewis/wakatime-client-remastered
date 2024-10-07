@@ -67,6 +67,6 @@
     "rollup-plugin-babel-minify": "^10.0.0",
     "rollup-plugin-filesize": "^10.0.0",
     "rollup-plugin-local-resolve": "^1.0.7",
-    "semantic-release": "^21.0.7"
+    "semantic-release": "^24.1.2"
   }
 }

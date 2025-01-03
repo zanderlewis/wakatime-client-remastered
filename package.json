@@ -1,6 +1,6 @@
 {
   "name": "wakatime-client-remastered",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A NodeJS client for the WakaTime API",
   "license": "MIT",
   "keywords": [

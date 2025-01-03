@@ -5,14 +5,8 @@ test/**
 coverage/**
 
 npm-debug.log
-commitlint.config.js
 *.test.js
 
 .DS_Store
-.eslintcache
-.travis.yml
-.babelrc
-.eslintignore
-.eslintrc
 
 .env

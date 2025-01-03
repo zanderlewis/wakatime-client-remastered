@@ -16,57 +16,20 @@
     "name": "zander@zanderlewis.dev"
   },
   "scripts": {
-    "build": "BABEL_ENV=production npx rollup -c --bundleConfigAsCjs",
-    "codecov": "npx codecov",
-    "commitmsg": "npx commitlint -E HUSKY_GIT_PARAMS",
-    "deploy": "npm run semantic-release",
-    "gc": "commit",
-    "is-build-es5": "npx es-check es5 './build/**/*.!(esm).js'",
-    "lint": "npx eslint --ext .js .",
-    "prepare": "npm run build",
-    "semantic-release": "npx semantic-release"
+    "test": "jest"
   },
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=20"
   },
-  "dependencies": {},
   "peerDependencies": {
-    "axios": ">=0.19.0"
+    "axios": "1.7.9"
   },
   "devDependencies": {
-    "@babel/cli": ">=7.22.9",
-    "@babel/core": ">=7.22.9",
-    "@babel/plugin-proposal-object-rest-spread": ">=7.20.0",
-    "@babel/plugin-transform-object-rest-spread": ">=7.22.5",
-    "@babel/plugin-transform-regenerator": ">=7.22.5",
-    "@babel/plugin-transform-runtime": ">=7.22.5",
-    "@babel/preset-env": ">=7.22.9",
-    "@babel/runtime": ">=7.22.6",
-    "@commitlint/cli": ">=19.5.0",
-    "@commitlint/config-angular": ">=19.5.0",
-    "@commitlint/prompt": ">=19.5.0",
-    "@commitlint/prompt-cli": ">=19.5.0",
-    "@eslint/object-schema": ">=2.0.3",
-    "@rollup/plugin-babel": ">=6.0.3",
-    "@rollup/plugin-commonjs": ">=28.0.0",
-    "@rollup/plugin-json": ">=6.1.0",
-    "@rollup/plugin-node-resolve": ">=15.1.0",
-    "@rollup/plugin-replace": ">=6.0.1",
-    "@rollup/plugin-terser": ">=0.4.0",
-    "babel-core": ">=7.0.0-bridge.0",
-    "dotenv": ">=16.3.1",
-    "es-check": ">=7.0.1",
-    "eslint": ">=9.16.0",
-    "eslint-config-airbnb-base": ">=15.0.0",
-    "eslint-plugin-import": ">=2.28.1",
-    "husky": ">=9.1.6",
-    "lru-cache": ">=11.0.1",
-    "marked": ">=15.0.0",
-    "rollup": ">=4.24.2",
-    "rollup-plugin-babel-minify": ">=10.0.0",
-    "rollup-plugin-filesize": ">=10.0.0",
-    "rollup-plugin-local-resolve": ">=1.0.7",
-    "semantic-release": ">=24.1.2"
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-jest": "^29.7.0",
+    "jest": "29.7.0",
+    "dotenv": "^16.4.7"
   }
 }

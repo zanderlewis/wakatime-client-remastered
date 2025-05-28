@@ -1,4 +1,6 @@
 name: Build
+permissions:
+  contents: read
 
 on:
   release:
@@ -37,4 +39,3 @@ jobs:
       - name: Install dependencies
         run: npm install
       # Test cases coming soon
-
